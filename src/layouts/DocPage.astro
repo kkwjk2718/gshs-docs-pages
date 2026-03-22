@@ -1,0 +1,21 @@
+---
+import SiteLayout from "./SiteLayout.astro";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<SiteLayout title={title} description={description}>
+  <article class="doc-shell">
+    <div class="doc-back">
+      <a href="/">문서 목록으로 돌아가기</a>
+    </div>
+    <div class="doc-content">
+      <slot />
+    </div>
+  </article>
+</SiteLayout>

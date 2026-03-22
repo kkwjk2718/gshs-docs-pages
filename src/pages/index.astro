@@ -1,0 +1,58 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+
+const guideCards = [
+  {
+    title: "시작하기",
+    summary: "서비스에 처음 접속한 사용자를 위한 기본 안내와 화면 구조 설명",
+    href: "/guides/getting-started",
+  },
+  {
+    title: "로그인과 계정",
+    summary: "로그인 방법, 내 정보 화면, 알림, 로그아웃 흐름 안내",
+    href: "/guides/account-login",
+  },
+  {
+    title: "공지 · 급식 · 일정",
+    summary: "가장 자주 확인하는 학교 핵심 정보 페이지 사용법",
+    href: "/guides/notices-meals-calendar",
+  },
+  {
+    title: "교내 사이트 · 음악 신청",
+    summary: "학교 링크 모음과 기상곡 신청 기능 사용 흐름 정리",
+    href: "/guides/sites-music",
+  },
+  {
+    title: "FAQ와 문의",
+    summary: "자주 묻는 질문과 문제를 제보하는 방법",
+    href: "/guides/faq",
+  },
+];
+---
+
+<SiteLayout title="Docs | GSHS.app" description="GSHS.app 학생/사용자용 가이드">
+  <section class="hero">
+    <span class="eyebrow">Docs</span>
+    <h1>학생과 사용자를 위한 GSHS.app 사용 문서</h1>
+    <p>
+      GSHS.app의 핵심 기능을 빠르게 익힐 수 있도록 자주 쓰는 흐름만 골라 간단하고
+      명확하게 정리했습니다. 이 문서는 학생과 교직원을 위한 공개 사용 안내입니다.
+    </p>
+  </section>
+
+  <div class="section-grid">
+    {
+      guideCards.map((guide) => (
+        <section class="section-card">
+          <h2>{guide.title}</h2>
+          <p>{guide.summary}</p>
+          <div class="cta-row">
+            <a class="cta secondary" href={guide.href}>
+              문서 보기
+            </a>
+          </div>
+        </section>
+      ))
+    }
+  </div>
+</SiteLayout>
